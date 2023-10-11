@@ -1,0 +1,24 @@
+/* Style for cart-text */
+.cart-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style for remove-button */
+.remove-button {
+  color: red;
+}
+
+.remove-button:hover {
+  color: #ff4500;
+  background-color: transparent;
+}
+
+/* Style for cart-total */
+.cart-total {
+  border-top: 1px solid #151313;
+  font-weight: bolder;
+  font-size: larger;
+  text-align: center;
+}
