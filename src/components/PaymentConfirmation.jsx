@@ -79,26 +79,41 @@ const PaymentConfirmation = ({ open, handleClose, totalAmount }) => {
           </>
         ) : (
           <>
-            {Object.keys(formData).map((fieldName) => (
-              <TextField
-                key={fieldName}
-                className="custom-textfield"
-                label={
-                  fieldName === "name"
-                    ? "Name"
-                    : fieldName === "phoneNumber"
-                    ? "Phone Number"
-                    : "Address"
-                }
-                fullWidth
-                variant="outlined"
-                name={fieldName}
-                value={formData[fieldName]}
-                onChange={handleInputChange}
-                error={Boolean(validationErrors[fieldName])}
-                helperText={validationErrors[fieldName]}
-              />
-            ))}
+            <TextField
+              className="custom-textfield"
+              label="Name"
+              fullWidth
+              variant="outlined"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              error={Boolean(validationErrors.name)}
+              helperText={validationErrors.name}
+            />
+
+            <TextField
+              className="custom-textfield"
+              label="Phone Number"
+              fullWidth
+              variant="outlined"
+              name="phoneNumber"
+              value={formData.phoneNumber}
+              onChange={handleInputChange}
+              error={Boolean(validationErrors.phoneNumber)}
+              helperText={validationErrors.phoneNumber}
+            />
+
+            <TextField
+              className="custom-textfield"
+              label="Address"
+              fullWidth
+              variant="outlined"
+              name="address"
+              value={formData.address}
+              onChange={handleInputChange}
+              error={Boolean(validationErrors.address)}
+              helperText={validationErrors.address}
+            />
 
             <TextField
               className="custom-textfield"
