@@ -8,7 +8,7 @@ import {
   DialogTitle,
   TextField,
 } from "@mui/material";
-import "./PaymentConfirmation.css";
+
 
 const PaymentConfirmation = ({ open, handleClose, totalAmount }) => {
   const [formData, setFormData] = useState({
@@ -63,13 +63,12 @@ const PaymentConfirmation = ({ open, handleClose, totalAmount }) => {
 
   return (
     <Dialog open={open} onClose={handleDismiss}>
-      <DialogTitle>Payment Confirmation</DialogTitle>
+      <DialogTitle style={{ margin: 0, padding: '10px', fontSize: '24px' }}>Payment Confirmation</DialogTitle>
       <DialogContent>
         {isPaymentComplete ? (
           <>
             <DialogContentText>
-              Thank you for your order! Your food will be delivered in{" "}
-              {deliveryTime} minutes, and your bill will be ${totalAmount}.
+              Thank you for your order! Your food will be delivered in {deliveryTime} minutes, and your bill will be ${totalAmount}.
             </DialogContentText>
             <DialogActions>
               <Button onClick={handleDismiss} color="primary">
@@ -80,7 +79,7 @@ const PaymentConfirmation = ({ open, handleClose, totalAmount }) => {
         ) : (
           <>
             <TextField
-              className="custom-textfield"
+              style={{ marginTop: '7px' }}
               label="Name"
               fullWidth
               variant="outlined"
@@ -90,9 +89,9 @@ const PaymentConfirmation = ({ open, handleClose, totalAmount }) => {
               error={Boolean(validationErrors.name)}
               helperText={validationErrors.name}
             />
-
+  
             <TextField
-              className="custom-textfield"
+              style={{ marginTop: '7px' }}
               label="Phone Number"
               fullWidth
               variant="outlined"
@@ -102,9 +101,9 @@ const PaymentConfirmation = ({ open, handleClose, totalAmount }) => {
               error={Boolean(validationErrors.phoneNumber)}
               helperText={validationErrors.phoneNumber}
             />
-
+  
             <TextField
-              className="custom-textfield"
+              style={{ marginTop: '7px' }}
               label="Address"
               fullWidth
               variant="outlined"
@@ -114,9 +113,9 @@ const PaymentConfirmation = ({ open, handleClose, totalAmount }) => {
               error={Boolean(validationErrors.address)}
               helperText={validationErrors.address}
             />
-
+  
             <TextField
-              className="custom-textfield"
+              style={{ marginTop: '7px' }}
               label="Notes (Optional)"
               fullWidth
               variant="outlined"
@@ -124,8 +123,8 @@ const PaymentConfirmation = ({ open, handleClose, totalAmount }) => {
               value={formData.notes}
               onChange={handleInputChange}
             />
-
-            <DialogContentText className="total-text">
+  
+            <DialogContentText style={{ marginTop: '15px', fontWeight: 'bold', color: 'red' }}>
               Total Amount: ${totalAmount}
             </DialogContentText>
             <DialogActions>
@@ -141,6 +140,7 @@ const PaymentConfirmation = ({ open, handleClose, totalAmount }) => {
       </DialogContent>
     </Dialog>
   );
+  
 };
 
 export default PaymentConfirmation;
